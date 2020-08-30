@@ -34,8 +34,7 @@ pipeline {
      stage('run contianer'){
        steps{
           sh 'docker run --name mycont1 -itd -p 80:80 587589636093.dkr.ecr.ap-south-1.amazonaws.com/myng:1'
-       }
+        }
      }
- 
-  }
+   }
 }
