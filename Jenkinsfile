@@ -24,7 +24,9 @@ pipeline {
      }
      stage('run contianer'){
        steps{
-          sh 'docker run --name mycont1 -itd -p 80:80 myng:1'
+          sh 'docker run --name mycont1 -itd -p 81:80 myng:1'
+          sh 'docker run --name mycont2 -itd -p 82:80 myng:1'
+          sh 'docker run --name mycont3 -itd -p 83:80 myng:1'
         }
      }
    }
