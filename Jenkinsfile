@@ -11,13 +11,7 @@ pipeline {
             git 'https://github.com/karthik0248/oGENIEIE.git'
           }
         }
-        stage('mvn build'){
-          steps{
-            sh 'mvn clean'
-            sh 'mvn package'
-           }
-         }
-         stage('docker version'){
+        stage('docker version'){
            steps{
              sh 'docker --version'
            }
