@@ -33,7 +33,7 @@ pipeline {
      }
      stage('run contianer'){
        steps{
-          sh 'docker run --nginxcon1 -itd -p 80:80 -myng:1'
+          sh 'docker run --name myng14 -itd -p 80:80 587589636093.dkr.ecr.us-east-1.amazonaws.com/myng:1'
        }
      }
      
