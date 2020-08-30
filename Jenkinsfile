@@ -19,15 +19,17 @@ pipeline {
      }
      stage('docker build image'){
        steps{
-          echo 'docker build image'
           sh 'docker build -t myng:1 .'
+       }
+     } 
+      stage('docker tag'){
+        steps{
           sh 'docker tag myng:1 587589636093.dkr.ecr.ap-south-1.amazonaws.com/myng:1'
        }
      }
      stage('Push to ECR'){
        steps{
-          sh '$(aws ecr get-login --no-include-email)'
-          sh 'docker tag myng:1 587589636093.dkr.ecr.ap-south-1.amazonaws.com/myng:1'   
+          sh '$(aws ecr get-login --no-include-email)'   
           sh 'docker push 587589636093.dkr.ecr.ap-south-1.amazonaws.com/myng:1'
        }
      }
