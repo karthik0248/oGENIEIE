@@ -2,7 +2,7 @@ pipeline {
    agent any
   stages {
       stage('git pull'){
-        steps {
+        steps{
             echo 'pulling git repo'
             git 'https://github.com/karthik0248/oGENIEIE.git'
           }
@@ -33,5 +33,5 @@ pipeline {
               sh 'docker run --name Myynag -itd -p 80:80 myng:1'
            }
          }
-      } 
-  }
+     }  
+ }
